@@ -4,6 +4,155 @@ body {
     background: #f7f7f7;
     color: #222;
 }
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 24px;
+}
+header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+.logo {
+    width: 220px;
+    max-width: 90%;
+    margin-bottom: 12px;
+}
+.subtitle {
+    color: #444;
+    font-size: 1.1em;
+    margin-top: -8px;
+}
+.contact {
+    background: #f9f871;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.phone {
+    font-size: 1.3em;
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 6px 0;
+}
+.whatsapp {
+    display: inline-block;
+    margin-top: 10px;
+    background: #25d366;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.whatsapp:hover {
+    background: #128c7e;
+}
+.services, .about {
+    margin-bottom: 24px;
+}
+.services ul {
+    padding-left: 20px;
+}
+footer {
+    text-align: center;
+    color: #888;
+    font-size: 0.95em;
+    margin: 24px 0 0 0;
+}
+@media (max-width: 700px) {
+    .container {
+        padding: 10px;
+    }
+    .logo {
+        width: 150px;
+    }
+}
+
+/* Hamburger ve Side Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+}
+.hamburger span {
+    height: 4px;
+    width: 26px;
+    background: #fff;
+    margin: 4px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 240px;
+    height: 100%;
+    background: #222;
+    color: #fff;
+    z-index: 1001;
+    transition: right 0.3s;
+    padding-top: 60px;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+}
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.side-menu ul li {
+    margin: 24px 0;
+    text-align: left;
+    padding-left: 24px;
+}
+.side-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.side-menu ul li a:hover {
+    color: #f9f871;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+/* Side menu aktifken */
+.side-menu.active {
+    right: 0;
+}
+.overlay.active {
+    display: block;
+}
+/* Hamburger menü aktifken üst menüyü gizle */
+.nav-links.hide {
+    display: none !important;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -17,7 +166,7 @@ body {
     align-items: center;
 }
 .nav-logo {
-    width: 90px;
+    width: 48px;
     margin-right: 10px;
 }
 .brand {
@@ -47,7 +196,7 @@ body {
     padding: 48px 10px 32px 10px;
 }
 .hero-logo {
-    width: 360px;
+    width: 240px;
     margin-bottom: 16px;
 }
 .hero h1 {
@@ -172,4 +321,10 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-}
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: flex;
+    }
+} 

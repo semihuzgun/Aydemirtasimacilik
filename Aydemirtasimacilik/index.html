@@ -12,14 +12,29 @@
             <img src="logo.png" alt="Aydemir Logo" class="nav-logo">
             <span class="brand">AYDEMİR</span>
         </div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="#anasayfa">Anasayfa</a></li>
             <li><a href="#hizmetler">Hizmetlerimiz</a></li>
             <li><a href="#hakkimizda">Hakkımızda</a></li>
             <li><a href="#galeri">Galeri</a></li>
             <li><a href="#iletisim">İletişim</a></li>
         </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
+    <div class="side-menu" id="sideMenu">
+        <ul>
+            <li><a href="#anasayfa" onclick="closeMenu()">Anasayfa</a></li>
+            <li><a href="#hizmetler" onclick="closeMenu()">Hizmetlerimiz</a></li>
+            <li><a href="#hakkimizda" onclick="closeMenu()">Hakkımızda</a></li>
+            <li><a href="#galeri" onclick="closeMenu()">Galeri</a></li>
+            <li><a href="#iletisim" onclick="closeMenu()">İletişim</a></li>
+        </ul>
+    </div>
+    <div class="overlay" id="overlay" onclick="closeMenu()"></div>
     <section class="hero" id="anasayfa">
         <div class="hero-content">
             <img src="logo.png" alt="Aydemir Logo" class="hero-logo">
@@ -55,10 +70,6 @@
     <section class="gallery" id="galeri">
         <h2>Galeri</h2>
         <div class="gallery-images">
-          <!--  <img src="arac1.jpg" alt="Araç 1">
-            <img src="arac2.jpg" alt="Araç 2">
-            <img src="arac3.jpg" alt="Araç 3">
-			-->
         </div>
     </section>
     <section class="contact" id="iletisim">
@@ -68,12 +79,35 @@
             <p><strong>Telefon:</strong> <a href="tel:05337859170">0 533 785 91 70</a></p>
             <p><strong>Adres:</strong> [Adresinizi buraya yazın]</p>
             <p><strong>E-posta:</strong> [email protected]</p>
-        </div>       
+        </div>
+        <form class="contact-form">
+            <input type="text" placeholder="Adınız" required>
+            <input type="email" placeholder="E-posta" required>
+            <textarea placeholder="Mesajınız" required></textarea>
+            <button type="submit">Gönder</button>
+        </form>
     </section>
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 AYDEMİR Hafriyat ve Taşımacılık. Tüm hakları saklıdır.</p>
+            <p>&copy; 2024 AYDEMİR Hafriyat ve Taşımacılık. Tüm hakları saklıdır.</p>
         </div>
     </footer>
+    <script>
+    const hamburger = document.getElementById('hamburger');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('overlay');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.onclick = function() {
+        sideMenu.classList.add('active');
+        overlay.classList.add('active');
+        navLinks.classList.add('hide');
+    };
+    function closeMenu() {
+        sideMenu.classList.remove('active');
+        overlay.classList.remove('active');
+        navLinks.classList.remove('hide');
+    }
+    </script>
 </body>
-</html>
+</html> 
